@@ -1179,7 +1179,7 @@ background:linear-gradient(90deg,#db4bff,#5954ff);
 }
 
 :root {
-	--gap: 1rem;
+	--gap: 1.5rem;
 	--card-width: clamp(230px, 15vw, 100vw);
 	--card-aspect-ratio: 5 / 7;
 	--card-height: calc(var(--card-width) * (7 / 5));
