@@ -2,8 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jeyashree Narayanan - UI/UX Designer Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />    <title>Jeyashree Narayanan - UI/UX Designer Portfolio</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,12 +12,17 @@
    <link rel="stylesheet" href="styles.css">
    <link rel="stylesheet" href="smallDeviceStyle.css">
 </head>
+<!-- <link rel="stylesheet" href="theme.css"> -->
 <body>
     <div class="main">
-      <nav class="navbar">
+      <nav class="navbar navbar-expand-lg ">
+        <div class="container-fluid">
+          <button class="navbar-toggler rounded-pill  bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span><i class="bi bi-arrows-angle-expand"></i></span>
+          </button>
         <!-- <div  class="navbar-brand">
         My Portfolio</div> -->
-        <div class="navbar-collapse" id="navbarNavDropdown">
+        <div class="navbar-collapse collapse" id="navbarNav">
           <ul class="topnav">
             <li>
               <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
@@ -40,7 +44,9 @@
               <span class="icon"><ion-icon name="chatbubbles-outline"></ion-icon></span>
               <span class="title"><a href="#contact">Contact</a></span>
             </li>
+           
           </ul>
+        </div>
         </div>
       </nav>
       
@@ -291,9 +297,9 @@
       
         <div class="forms" >
         <form class="contact-form xyz" id="mailform">
-          <input type="text" placeholder="Enter your name" name="customer_name" class="name-input" required>
-          <input type="email" placeholder="Enter your email" class="email-input" required>
-          <textarea placeholder="Your message" class="message-input" rows="4" required></textarea>
+          <input type="text" placeholder="Enter your name" name="customer" class="name-input" required>
+          <input type="email" placeholder="Enter your email" class="email-input" required name="email">
+          <textarea placeholder="Your message" class="message-input" rows="4" required name="message"></textarea>
           <button type="submit" class="submit-btn">Send</button>
         </form>
       </div>
@@ -303,9 +309,9 @@
             <a href="https://github.com/vinothvbt"><i class="fab fa-github icon"></i></a>
           </li>
           <li>
-            <a href="https://www.linkedin.com/in/jeyashree-narayanan-a-0485a0320?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="fab fa-linkedin-in icon"></i></a></li>
+            <a href="#"><i class="fab fa-linkedin-in icon"></i></a></li>
           <li>
-            <a href="tel:7092464926"><i class="fab fa-telephone"></i></a></li>
+            <a href="jeyashreenarayanan1407@gmail.com"><i class="fab fa-google-plus-g icon"></i></a></li>
         </ul>
       </div>
     </footer>
@@ -313,14 +319,14 @@
 
     <script>
      (function() {
-    emailjs.init("etAN9J_iAGG9l1oGG"); // Replace with your actual Public Key
+    emailjs.init("etAN9J_iAGG9l1oGG"); 
   })();
 
   document.getElementById("mailform").addEventListener("submit", function(event) {
     event.preventDefault();
 
-    const serviceID = "service_w7l2kpr"; // Replace with your Service ID
-    const templateID = "template_55ake9q"; // Replace with your Template ID
+    const serviceID = "service_w7l2kpr";
+    const templateID = "template_55ake9q"; 
 
     emailjs.sendForm(serviceID, templateID, this)
       .then(() => alert("Message sent successfully!"))
