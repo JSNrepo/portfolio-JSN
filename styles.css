@@ -13,7 +13,7 @@
   border-bottom-left-radius: 20px;
   right: 0;
   top:0;
-  z-index: 99;
+  z-index: 1000;
   transition: all  0.5s ease-in-out;
 } 
 
@@ -168,6 +168,7 @@ transition-delay: 0.25s;
   margin:5px;
   font-weight:bold;
   display: inline;
+  
   font-size: 2em;
 }
 .tagline{
@@ -470,18 +471,17 @@ color: black;
 }
 #Cvbtn{
   background:linear-gradient(90deg,#db4bff,#5954ff); 
-  color:light-dark(rgb(255 255 255),rgb(167, 167, 167));
+  color:light-dark(rgb(255 255 255),rgb(0, 0, 0));
   margin:0px;
   padding: 5px 20px; 
   font-size: 1.2rem; 
   border: none; 
   border-radius: 55px; 
   box-shadow: 0 5px 10px light-dark(rgb(153, 153, 153),black);
-
   transition: all 0.8s ease; }
 #flip-btn:hover {
-  background-color:light-dark(rgb(0, 0, 0),rgb(167, 167, 167));
-  color:light-dark(rgb(255 255 255),rgb(167, 167, 167));
+  background-color:light-dark(rgb(0, 0, 0),rgb(255, 255, 255));
+  color:light-dark(rgb(255 255 255),rgb(0, 0, 0));
   transform: scale(1.05);
 }
 #Cvbtn:hover {
@@ -700,7 +700,7 @@ box-shadow: 0 5px 10px rgb(166, 0, 255);
 }
 .blank{
   background-color:light-dark(white,black);
-  z-index: 2001;
+  z-index: 200;
   position: sticky;
   left: 0;
   top: 0;
@@ -720,10 +720,6 @@ box-shadow: 0 5px 10px rgb(166, 0, 255);
 }
 
  .skills {
-  background:url("images/");
-  background-size:cover;
-  background-repeat: no-repeat;
-  background-position: center;
   transition: all 0.5s ease; 
   display: flex;
   justify-content: center;
@@ -735,12 +731,7 @@ box-shadow: 0 5px 10px rgb(166, 0, 255);
   animation: fadeInUp 1s ease-in-out;
 
 }
-.skills h2{
-  font-size: 1.5em;
-  padding:5px;
-  background-color:BLUE;
-  font-weight: bold;
-}
+
 
 .skills-section {
   height: 80vh;
@@ -766,7 +757,7 @@ box-shadow: 0 5px 10px rgb(166, 0, 255);
   flex-direction: column;
   justify-content: center;
   gap: 5px;
-  background: rgba(163, 198, 255, 0);
+  background: rgb(1 7 17 / 0%);
   backdrop-filter: blur(10px);
   border-radius: 20px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
@@ -794,7 +785,8 @@ box-shadow: 0 5px 10px rgb(166, 0, 255);
   text-shadow:0 2px 5px rgb(0, 0, 0);
 }
 .skills-box h3 {
-  
+  color:light-dark(black,#ffffff);
+  text-shadow:0 1px 5px black;
   padding-top:3px;
   padding-bottom:5px;
   border-radius:50px;
@@ -831,7 +823,7 @@ box-shadow: 0 5px 10px rgb(166, 0, 255);
 .skill-info p {
   margin: 0 0 8px;
   font-size: 1.1rem;
-  color:#363636;
+  color:light-dark(black,#ffffff);
   transition: all 0.3s ease-in-out;
 
 }
