@@ -1,18 +1,42 @@
 :root{
   color-scheme: light dark;
 }
+@media screen and (min-width:800px){
+  .navvbar{
+  top:0;
+  right:0;
+  }
+.left{
+  transform: translateX(100%);
+  opacity: 0;
+  transition: all 0.7s ease-in-out;
+}
 
+.right{
+  transform: translateX(-100%);
+  opacity: 0;
+  transition: all 0.7s ease-in-out;
+}
+.left.scrolled{
+  transform: translateX(0);
+      opacity: 1;
+    }
+
+.right.scrolled{
+  transform: translateX(0);
+      opacity: 1;
+    }
+}
 .navbar{
   background-color: transparent;
   backdrop-filter: blur(50px);
   display: flex;
   width: fit-content;
   padding: 0;
+  right:0;
   color: #fff;
   position: fixed;
   border-bottom-left-radius: 20px;
-  right: 0;
-  top:0;
   z-index: 1000;
   transition: all  0.5s ease-in-out;
 } 
@@ -126,7 +150,7 @@ transform: scale(1);
 transition-delay: 0.25s;
 }
 .intro{
-  background-image:linear-gradient(0deg,light-dark(rgba(255, 255, 255, 0.549),black),light-dark(rgba(255, 255, 255, 0.682),rgba(0, 0, 0, 0.314))),url('images/blackspiral.png'); 
+  background-image:linear-gradient(0deg,light-dark(rgba(255, 255, 255, 0.549),black),light-dark(rgba(255, 255, 255, 0.682),rgba(0, 0, 0, 0.314))),url('https://res.cloudinary.com/dcnsm4mxv/image/upload/v1738594289/blackspiral_tksmce.png'); 
   background-position: center;
   background-attachment: fixed;
   background-size: cover; 
@@ -526,7 +550,7 @@ transition: all 0.7s ease-in-out;
 }
 .box.scrolled{
   opacity: 1;
-  transform: translateX(0px) scale(1);
+  transform: scale(1);
 }
 
 
@@ -584,7 +608,7 @@ right: 0;
 width: 100%;
 height: 100%;
 border-radius: 10px;
-background: url("images/html-5.png") left no-repeat ,url("images/css-3.png") right no-repeat,url("images/js.png") center no-repeat;
+background: url("https://res.cloudinary.com/dcnsm4mxv/image/upload/v1738594289/html-5_zuexu0.png") left no-repeat ,url("https://res.cloudinary.com/dcnsm4mxv/image/upload/v1738594290/css-3_p0bwqy.png") right no-repeat,url("https://res.cloudinary.com/dcnsm4mxv/image/upload/v1738594290/js_aqevun.png") center no-repeat;
 background-size: 40px,40px ,40px;
 background-color: rgba(255, 255, 255, 0.341);
 backdrop-filter:blur(10px);
@@ -644,7 +668,6 @@ background-clip: text;
 }
 .container .box:hover .content
 {
-left: -25px;
 color: black;
 border-top:10px solid #af05ff;
 border-bottom :10px solid #0065ff;
@@ -842,14 +865,14 @@ box-shadow: 0 5px 10px rgb(166, 0, 255);
   border-radius: 20px;
 }
 .skills:has(.skills-box.right:hover) {
-  background-image: url("images/coder.gif");
+  background-image: url("https://res.cloudinary.com/dcnsm4mxv/image/upload/v1738594285/coder_gnzkuj.gif");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
 }
 
 .skills:has(.skills-box.left:hover) {
-  background-image: url("images/design2.gif");
+  background-image: url("https://res.cloudinary.com/dcnsm4mxv/image/upload/v1738594337/design2_udb5kx.gif");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -903,26 +926,7 @@ color: #000000;
   transform: scale(1.05);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
-.left{
-  transform: translateX(100%);
-  opacity: 0;
-  transition: all 0.7s ease-in-out;
-}
 
-.right{
-  transform: translateX(-100%);
-  opacity: 0;
-  transition: all 0.7s ease-in-out;
-}
-.left.scrolled{
-  transform: translateX(0);
-      opacity: 1;
-    }
-
-.right.scrolled{
-  transform: translateX(0);
-      opacity: 1;
-    }
 
 
 @keyframes slideInFromLeft {
@@ -977,7 +981,7 @@ padding: 0;
 
 
 .contact{
-  background-image:url("images/phone.png");
+  background-image:url("https://res.cloudinary.com/dcnsm4mxv/image/upload/v1738594286/telephone-2357525_e2dkbn.png");
   background-color: light-dark(white,rgb(54, 54, 54));
   background-repeat:no-repeat;
   min-height:100vh;
@@ -1159,7 +1163,7 @@ background:linear-gradient(90deg,#db4bff,#5954ff);
 
 .mydesigns {
 	display: grid;
-  background-image: url("images/wall2.png");
+  background-image: url("https://res.cloudinary.com/dcnsm4mxv/image/upload/v1738594333/wall_y0xcs9.png");
 	place-items: center;
 	font-family:  'Google Sans', sans-serif, system-ui;
 	overflow-x: hidden;
