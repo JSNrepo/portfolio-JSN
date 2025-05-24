@@ -981,7 +981,7 @@ padding: 0;
 
 
 .contact{
-  background-image:url("https://res.cloudinary.com/dcnsm4mxv/image/upload/v1738594286/telephone-2357525_e2dkbn.png");
+  background-image:url("phone.png");
   background-color: light-dark(white,rgb(54, 54, 54));
   background-repeat:no-repeat;
   min-height:100vh;
