@@ -74,6 +74,8 @@ display: flex;
 justify-content: center;
 align-items: center;
 transition: 0.5s;
+/* Enhanced microinteractions */
+transform-origin: center;
 }
 
 .topnav li::before {
@@ -104,11 +106,15 @@ opacity: 0;
 width: 120px;
 background:linear-gradient(90deg,#db4bff,#5954ff); /* Button background color */
 box-shadow: 0 10px 25px rgba(0, 0, 0, 0);
+/* Enhanced hover effect */
+transform: translateY(-3px) scale(1.05);
 }
 .topnav li:active {
   width: 120px;
   background:linear-gradient(180deg,#db4bff,#5954ff); /* Button background color */
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0);
+  /* Enhanced active state */
+  transform: translateY(-1px) scale(0.98);
   }
 .topnav li:hover::before {
 opacity: 1;
@@ -161,6 +167,9 @@ transition-delay: 0.25s;
   height: 100vh;
   color: #fff;
   font-weight: bold;
+  /* Parallax effect */
+  transform: translateZ(0);
+  will-change: transform;
 }
 
 
@@ -547,10 +556,18 @@ opacity: 0;
 transform: translateX(200px) scale(0.4); 
 margin: 40px 30px;
 transition: all 0.7s ease-in-out;
+/* Enhanced microinteractions */
+cursor: pointer;
 }
 .box.scrolled{
   opacity: 1;
   transform: scale(1);
+}
+
+.container .box:hover {
+  /* Enhanced parallax-like effect */
+  transform: scale(1.05) translateY(-10px);
+  filter: brightness(1.1);
 }
 
 
@@ -752,7 +769,8 @@ box-shadow: 0 5px 10px rgb(166, 0, 255);
  color:#000000;
    gap:10px;
   animation: fadeInUp 1s ease-in-out;
-
+  /* Better alignment */
+  padding: 2rem 0;
 }
 
 
@@ -764,6 +782,8 @@ box-shadow: 0 5px 10px rgb(166, 0, 255);
   flex-direction: column;
   justify-content: center;
   text-align: center;
+  /* Better alignment */
+  align-items: center;
 }
 
 
@@ -771,6 +791,9 @@ box-shadow: 0 5px 10px rgb(166, 0, 255);
   gap:20px;
   display: flex;
   height: 100%;
+  /* Better alignment for skills boxes */
+  align-items: stretch;
+  justify-content: center;
 }
 
 .skills-box {
@@ -786,12 +809,32 @@ box-shadow: 0 5px 10px rgb(166, 0, 255);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
   border: 1px solid rgba(255, 255, 255, 0.2);
   transition: all 0.3s ease-in-out;
+  /* Enhanced microinteractions */
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.skills-box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: left 0.5s ease;
+}
+
+.skills-box:hover::before {
+  left: 100%;
 }
 
 .skills-box:hover {
-  transform: scale(1.05);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
-  border-color: rgba(0, 0, 0, 0.7);
+  transform: scale(1.05) translateY(-5px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+  border-color: rgba(219, 75, 255, 0.5);
+  /* Parallax-like lift effect */
 }
 .skills-box:hover h3 {
  color:#ffffff;
@@ -831,12 +874,15 @@ box-shadow: 0 5px 10px rgb(166, 0, 255);
   background-color: #a0a0a020;
   border-radius: 30%;
   backdrop-filter: blur(12px);
-  transition: transform 0.3s ease, filter 0.3s ease;
+  transition: transform 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease;
+  /* Enhanced microinteraction */
+  cursor: pointer;
 }
 
 .skill img:hover {
-  transform: scale(1.3);
+  transform: scale(1.3) rotate(5deg);
   filter: drop-shadow(0 0 12px rgba(192, 132, 252, 1));
+  box-shadow: 0 8px 25px rgba(192, 132, 252, 0.4);
 }
 
 .skill-info {
@@ -991,6 +1037,9 @@ padding: 0;
   display: flex;
   flex-direction: column;
   align-items:center;
+  justify-content: center;
+  /* Better alignment */
+  padding: 2rem;
 }
 
 .contact.scrolled{
@@ -1081,7 +1130,9 @@ background:linear-gradient(90deg,#db4bff,#5954ff);
   padding: 20px;
   backdrop-filter: blur(15px);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
-  
+  /* Better alignment for contact form */
+  margin: 2rem auto;
+  position: relative;
 }
 .xyz{
   opacity: 0;
@@ -1105,12 +1156,17 @@ background:linear-gradient(90deg,#db4bff,#5954ff);
   color: #000000;
   box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(30px);
+  /* Enhanced microinteractions */
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
 }
 
 .email-input:focus, .message-input:focus,.name-input:focus {
   outline: none;
   background: rgba(255, 255, 255, 0.2);
-  box-shadow: 0 0 10px rgba(72, 61, 139, 0.7);
+  box-shadow: 0 0 20px rgba(72, 61, 139, 0.7);
+  border-color: rgba(219, 75, 255, 0.5);
+  transform: translateY(-2px);
 }
 
 .submit-btn {
@@ -1122,13 +1178,36 @@ background:linear-gradient(90deg,#db4bff,#5954ff);
   width:100%;
   font-size: 1.2rem;
   cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
   box-shadow: 0 4px 10px rgba(72, 61, 139, 0.4);
+  /* Enhanced microinteractions */
+  position: relative;
+  overflow: hidden;
+}
+
+.submit-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.submit-btn:hover::before {
+  left: 100%;
 }
 
 .submit-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 15px rgba(139, 0, 139, 0.6);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 8px 25px rgba(139, 0, 139, 0.6);
+  background: linear-gradient(135deg, #5a67e8, #a545d4);
+}
+
+.submit-btn:active {
+  transform: translateY(-1px) scale(0.98);
 }
 
 
@@ -1220,10 +1299,14 @@ background:linear-gradient(90deg,#db4bff,#5954ff);
   border-radius: 10px;
   box-shadow: 0 6px 7px rgba(0, 0, 0, 0.648);
 	background: hsl(0 0% 80%);
-  transition: all 0.1s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  /* Enhanced microinteractions */
+  cursor: pointer;
+  overflow: hidden;
 }
 .mydesigns img:hover{
-  transform: scale(1.05);
-  box-shadow: 0 12px 15px rgba(0, 0, 0, 0.999);
-
+  transform: scale(1.08) rotate(1deg);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.8);
+  border-radius: 15px;
+  filter: brightness(1.1) contrast(1.1);
 }
