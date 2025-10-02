@@ -1,462 +1,450 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />    <title>Jeyashree Narayanan - UI/UX Designer Portfolio</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-   <link rel="stylesheet" href="styles.css">
-   <link rel="stylesheet" href="smallDeviceStyle.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeyashree Narayanan | Application Security Engineer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0a0a0a;
+            color: #e2e8f0;
+        }
+
+        .font-mono {
+            font-family: 'Roboto Mono', monospace;
+        }
+
+        .glass-effect {
+            background: rgba(17, 24, 39, 0.5);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .neon-glow {
+            box-shadow: 0 0 5px #2dd4bf, 0 0 10px #2dd4bf, 0 0 15px #2dd4bf;
+        }
+        
+        .neon-text {
+            text-shadow: 0 0 5px #2dd4bf, 0 0 10px #2dd4bf;
+        }
+
+        .terminal-cursor {
+            display: inline-block;
+            width: 10px;
+            height: 1.5em;
+            background-color: #2dd4bf;
+            margin-left: 5px;
+            animation: blink 1s step-end infinite;
+        }
+
+        @keyframes blink {
+            from, to { background-color: transparent; }
+            50% { background-color: #2dd4bf; }
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .progress-bar-fill {
+            transform: translateX(-100%);
+            transition: transform 1.5s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+        
+        .progress-bar-fill.visible {
+            transform: translateX(0);
+        }
+        
+        #grid-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background-image:
+                linear-gradient(to right, rgba(45, 212, 191, 0.1) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(45, 212, 191, 0.1) 1px, transparent 1px);
+            background-size: 40px 40px;
+            animation: bg-scroll 60s linear infinite;
+        }
+        
+        @keyframes bg-scroll {
+            from { background-position: 0 0; }
+            to { background-position: -1000px -1000px; }
+        }
+    </style>
 </head>
-<!-- <link rel="stylesheet" href="theme.css"> -->
-<body>
-    <div class="main">
-      <nav class="navbar navbar-expand-lg ">
-          <ul class="topnav">
-            <li>
-              <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
-              <span class="title"><a href="#intro">Home</a></span>
-            </li>
-            <li>
-              <span class="icon"><ion-icon name="help-outline"></ion-icon></span>
-              <span class="title"><a href="#skills">Skills</a></span>
-            </li>
-            <li>
-              <span class="icon"><ion-icon name="code-slash-outline"></ion-icon></span>
-              <span class="title"><a href="#works">Projects</a></span>
-            </li>
-            <li>
-              <span class="icon"><ion-icon name="color-palette-outline"></ion-icon></span>
-              <span class="title"><a href="#list-item-2">Creations</a></span>
-            </li>
-            <li>
-              <span class="icon"><ion-icon name="chatbubbles-outline"></ion-icon></span>
-              <span class="title"><a href="#contact">Contact</a></span>
-            </li>
-           
-          </ul>
+<body class="antialiased relative">
+    <div id="grid-background"></div>
+    
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 glass-effect">
+        <div class="container mx-auto px-6 py-4">
+            <nav class="flex items-center justify-between">
+                <a href="#" class="text-2xl font-bold font-mono text-teal-300 neon-text">JSN_></a>
+                <ul class="hidden md:flex items-center space-x-8">
+                    <li><a href="#about" class="hover:text-teal-300 transition-colors duration-300">About</a></li>
+                    <li><a href="#skills" class="hover:text-teal-300 transition-colors duration-300">Skills</a></li>
+                    <li><a href="#projects" class="hover:text-teal-300 transition-colors duration-300">Projects</a></li>
+                    <li><a href="#experience" class="hover:text-teal-300 transition-colors duration-300">Experience</a></li>
+                    <li><a href="#contact" class="px-4 py-2 border border-teal-300 rounded-md text-teal-300 hover:bg-teal-300 hover:text-gray-900 transition-all duration-300">Contact</a></li>
+                </ul>
+                <button id="mobile-menu-button" class="md:hidden text-2xl">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                    </svg>
+                </button>
+            </nav>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden">
+             <ul class="flex flex-col items-center space-y-4 py-4">
+                <li><a href="#about" class="hover:text-teal-300 transition-colors duration-300">About</a></li>
+                <li><a href="#skills" class="hover:text-teal-300 transition-colors duration-300">Skills</a></li>
+                <li><a href="#projects" class="hover:text-teal-300 transition-colors duration-300">Projects</a></li>
+                <li><a href="#experience" class="hover:text-teal-300 transition-colors duration-300">Experience</a></li>
+                <li><a href="#contact" class="px-4 py-2 border border-teal-300 rounded-md text-teal-300 hover:bg-teal-300 hover:text-gray-900 transition-all duration-300">Contact</a></li>
+            </ul>
+        </div>
+    </header>
 
-      </nav>
-      
-        <div id="intro" class="intro">
-            <div id="intro-flip-container" class="flip-container holographic-card ">
-                <div class="flipper start">
-                    <div class="front">
-                        <div class="container">
-                            <div class="row align-items-center">
-                                <div class="col">
-                                    <h1 id="myname" data-speed="0.4">I'm <br><span id="jsn">Jeyashree Narayanan</span></h1>
-                                   <p class="subtitle">I</p> <p class="subtitle" id="typewriter"></p>
-                                    <p class="tagline">I blend creativity and code to build stunning digital experiences.</p>
-                                    <div class="btn-grp-f">
-                                    <a id="Cvbtn" href="resume.pdf" download class="btn btn-light">Download CV</a>
-                                    <button id="flip-btn" class="btn btn-light">about me</button>
-                                  </div>
-                                </div>
-                                
-                            </div>
+    <main class="container mx-auto px-6 pt-24 md:pt-32">
+        <!-- Hero Section -->
+        <section id="home" class="min-h-screen flex items-center justify-center -mt-20">
+            <div class="text-center">
+                <div class="glass-effect rounded-lg p-6 md:p-10 border-2 border-teal-300/30">
+                    <h1 class="text-4xl md:text-6xl font-bold mb-4">
+                        Jeyashree <span class="text-teal-300">Narayanan</span>
+                    </h1>
+                    <div class="font-mono text-lg md:text-2xl text-slate-300 h-16 md:h-8 flex items-center justify-center">
+                        <span id="typewriter"></span><span class="terminal-cursor"></span>
+                    </div>
+                </div>
+                <div class="mt-8">
+                    <a href="#projects" class="inline-block px-8 py-3 bg-teal-400 text-gray-900 font-semibold rounded-lg shadow-lg hover:bg-teal-300 transform hover:-translate-y-1 transition-all duration-300">
+                        View My Work
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-20 fade-in">
+            <h2 class="text-3xl font-bold text-center mb-12">About Me // <span class="text-teal-300 font-mono">whoami</span></h2>
+            <div class="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-10">
+                <div class="w-full md:w-2/3">
+                    <p class="text-slate-300 leading-relaxed mb-4">
+                        I'm an Application Security Engineer with a passion for architecting resilient systems and uncovering their hidden flaws. My approach is rooted in the <strong class="text-teal-300">"Builder-Breaker"</strong> philosophy: I combine a developer's build-first methodology with an attacker's adversarial mindset to create security solutions that are both robust and practical.
+                    </p>
+                    <p class="text-slate-300 leading-relaxed mb-4">
+                        I thrive on solving complex security challenges, from architecting DevSecOps frameworks to designing novel active defense protocols. My experience includes hardening critical government applications and exploring the emerging threat landscape of AI/ML systems.
+                    </p>
+                    <p class="text-slate-300 leading-relaxed">
+                        I'm always seeking opportunities to apply my skills in offensive automation, defensive architecture, and AI/ML security to help build the next generation of secure and resilient technology.
+                    </p>
+                </div>
+                <div class="w-full md:w-1/3 flex justify-center">
+                    <div class="w-48 h-48 rounded-full bg-gray-800 border-4 border-teal-300 flex items-center justify-center neon-glow">
+                         <svg xmlns="http://www.w3.org/2000/svg" class="h-24 w-24 text-teal-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="py-20 fade-in">
+            <h2 class="text-3xl font-bold text-center mb-12">Core Competencies // <span class="text-teal-300 font-mono">./skills</span></h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Offensive Engineering -->
+                <div class="glass-effect p-6 rounded-lg">
+                    <h3 class="text-xl font-bold text-teal-300 mb-4">Offensive Engineering</h3>
+                    <ul class="space-y-2 text-slate-300">
+                        <li>Python & Bash Scripting</li>
+                        <li>Burp Suite & OWASP ZAP</li>
+                        <li>Penetration Testing</li>
+                        <li>Automation Frameworks</li>
+                    </ul>
+                </div>
+                <!-- Defensive Architecture -->
+                <div class="glass-effect p-6 rounded-lg">
+                    <h3 class="text-xl font-bold text-teal-300 mb-4">Defensive Architecture</h3>
+                    <ul class="space-y-2 text-slate-300">
+                        <li>Secure SDLC & STRIDE</li>
+                        <li>Cryptography (AES-GCM)</li>
+                        <li>Secure Code Review</li>
+                        <li>Threat Modeling</li>
+                    </ul>
+                </div>
+                <!-- DevSecOps -->
+                <div class="glass-effect p-6 rounded-lg">
+                    <h3 class="text-xl font-bold text-teal-300 mb-4">DevSecOps & Modern Dev</h3>
+                    <ul class="space-y-2 text-slate-300">
+                        <li>CI/CD Integration</li>
+                        <li>Docker & Containerization</li>
+                        <li>Git & Version Control</li>
+                        <li>Static Analysis (SonarQube)</li>
+                    </ul>
+                </div>
+                <!-- AI/ML Security -->
+                <div class="glass-effect p-6 rounded-lg">
+                    <h3 class="text-xl font-bold text-teal-300 mb-4">AI/ML Security</h3>
+                    <ul class="space-y-2 text-slate-300">
+                        <li>Prompt Injection</li>
+                        <li>Model Evasion</li>
+                        <li>Data Poisoning</li>
+                        <li>Membership Inference</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-12 fade-in">
+                 <h3 class="text-2xl font-bold text-center mb-8">Languages & Tools</h3>
+                 <div class="space-y-6">
+                    <div class="skill-bar">
+                        <div class="flex justify-between mb-1"><span class="font-semibold">Python</span><span>95%</span></div>
+                        <div class="w-full bg-gray-700 rounded-full h-2.5"><div class="bg-teal-400 h-2.5 rounded-full progress-bar-fill" style="width: 95%"></div></div>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="flex justify-between mb-1"><span class="font-semibold">Security Tooling (Burp, ZAP, etc)</span><span>90%</span></div>
+                        <div class="w-full bg-gray-700 rounded-full h-2.5"><div class="bg-teal-400 h-2.5 rounded-full progress-bar-fill" style="width: 90%"></div></div>
+                    </div>
+                     <div class="skill-bar">
+                        <div class="flex justify-between mb-1"><span class="font-semibold">Java & JavaScript</span><span>80%</span></div>
+                        <div class="w-full bg-gray-700 rounded-full h-2.5"><div class="bg-teal-400 h-2.5 rounded-full progress-bar-fill" style="width: 80%"></div></div>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="flex justify-between mb-1"><span class="font-semibold">Docker & CI/CD</span><span>85%</span></div>
+                        <div class="w-full bg-gray-700 rounded-full h-2.5"><div class="bg-teal-400 h-2.5 rounded-full progress-bar-fill" style="width: 85%"></div></div>
+                    </div>
+                 </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-20 fade-in">
+            <h2 class="text-3xl font-bold text-center mb-12">Cornerstone Projects // <span class="text-teal-300 font-mono">ls -l ./projects</span></h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Project 1: HATS -->
+                <div class="project-card glass-effect rounded-lg overflow-hidden group transform hover:-translate-y-2 transition-transform duration-300">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-teal-300 mb-2">HATS (Hacking Automation Tool Suite)</h3>
+                        <p class="text-slate-300 mb-4">A modular Python framework unifying 37+ CLI security tools to enable a 'shift-left' DevSecOps culture.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-gray-700 text-teal-300 text-xs font-mono px-2 py-1 rounded">Python</span>
+                            <span class="bg-gray-700 text-teal-300 text-xs font-mono px-2 py-1 rounded">DevSecOps</span>
+                            <span class="bg-gray-700 text-teal-300 text-xs font-mono px-2 py-1 rounded">CI/CD</span>
+                             <span class="bg-gray-700 text-teal-300 text-xs font-mono px-2 py-1 rounded">AI Integration</span>
                         </div>
+                        <button onclick="openModal('hatsModal')" class="mt-4 px-4 py-2 border border-teal-300 text-teal-300 rounded-md hover:bg-teal-300 hover:text-gray-900 transition-all duration-300">Learn More</button>
                     </div>
-                    <div class="back">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col co1">
-                                    <h1 class="display-4 text-center">About Me</h1>
-                                    <p class="text-center">Hello! I’m Jeyashree Narayanan, curently pusuing B.E. Computer science and Engineering in Rajalakshmi instituute of Technology CHennai. my ambition is to be top notch frontend developer and a passionate UI/UX designer eager to create amazing products and collaborate with talented individuals.</p>
-                                    <button id="flip-back-btn" ><i class="bi bi-phone-flip"></i>
-                                    </button>
-                                  </div>
-                                 <div class="col co2" >
-                                  <img src="https://res.cloudinary.com/dcnsm4mxv/image/upload/v1738594287/Untitled8_20250124163756_tlvuzr.png" alt="" id="profile">                 
-
-                                </div> 
-                              </div>
+                </div>
+                <!-- Project 2: DTP -->
+                <div class="project-card glass-effect rounded-lg overflow-hidden group transform hover:-translate-y-2 transition-transform duration-300">
+                     <div class="p-6">
+                        <h3 class="text-2xl font-bold text-teal-300 mb-2">Decoy Trap Protocol (DTP)</h3>
+                        <p class="text-slate-300 mb-4">A novel active defense SDK using cryptography and steganography to provide high-fidelity breach alerts.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-gray-700 text-teal-300 text-xs font-mono px-2 py-1 rounded">Python</span>
+                            <span class="bg-gray-700 text-teal-300 text-xs font-mono px-2 py-1 rounded">Cryptography</span>
+                            <span class="bg-gray-700 text-teal-300 text-xs font-mono px-2 py-1 rounded">Active Defense</span>
+                            <span class="bg-gray-700 text-teal-300 text-xs font-mono px-2 py-1 rounded">Steganography</span>
                         </div>
+                         <button onclick="openModal('dtpModal')" class="mt-4 px-4 py-2 border border-teal-300 text-teal-300 rounded-md hover:bg-teal-300 hover:text-gray-900 transition-all duration-300">Learn More</button>
                     </div>
                 </div>
             </div>
-
-    </div>
-  </div>
-  <div class="blank"><h1 class="head text-center ">my skills</h1></div>
-
-    <div id="skills" class="skills">
-      <div class="skills-section">
+        </section>
         
-        <div class="skills-container">
-          <!-- Design Skills -->
-          <div class="skills-box left">
-            <h3 class="skills-title">Design Skills</h3>
-            <div class="skill">
-              <img src="https://res.cloudinary.com/dcnsm4mxv/image/upload/v1738594285/canva-icon_lgrb6c.png" alt="UI/UX" />
-              <div class="skill-info">
-                <p>poster Design</p>
-                <div class="skill-bar">
-                  <div class="skill-progress" style="width: 85%;"></div>
+        <!-- Experience Section -->
+        <section id="experience" class="py-20 fade-in">
+            <h2 class="text-3xl font-bold text-center mb-12">Professional Experience // <span class="text-teal-300 font-mono">cat /var/log/career.log</span></h2>
+            <div class="max-w-3xl mx-auto">
+                <div class="relative pl-8 border-l-2 border-teal-300/30">
+                    <!-- Timeline Dot -->
+                    <div class="absolute -left-[11px] top-1 w-5 h-5 bg-teal-300 rounded-full neon-glow"></div>
+                    <p class="text-sm text-slate-400">May 2025 - Sep 2025</p>
+                    <h3 class="text-xl font-bold mt-1">Web Development Intern</h3>
+                    <h4 class="text-lg font-semibold text-teal-300 mb-3">National Informatics Centre (NIC)</h4>
+                    <ul class="list-disc list-inside space-y-2 text-slate-300">
+                        <li>Contributed to a national service desk application, securing core modules for over 10,000 government employees.</li>
+                        <li>Eradicated critical injection vulnerabilities (OWASP A03:2021) by re-architecting data submission workflows.</li>
+                        <li>Applied STRIDE threat modeling to proactively identify and mitigate security flaws during the design phase.</li>
+                        <li>Discovered and led the remediation of 3 critical authentication vulnerabilities during peer code reviews.</li>
+                    </ul>
                 </div>
-              </div>
             </div>
-            <div class="skill">
-              <img src="https://res.cloudinary.com/dcnsm4mxv/image/upload/v1738594288/figma_rx1vj4.png" alt="Graphic Design" />
-              <div class="skill-info">
-                <p>Ui Ux Design</p>
-                <div class="skill-bar">
-                  <div class="skill-progress" style="width: 70%;"></div>
-                </div>
-              </div>
-            </div>
-            <div class="skill">
-              <img src="https://res.cloudinary.com/dcnsm4mxv/image/upload/v1738594284/ibis-paint-x_gntqta.png" alt="Graphic Design" />
-              <div class="skill-info">
-                <p>Graphic Design</p>
-                <div class="skill-bar">
-                  <div class="skill-progress" style="width: 90%;"></div>
-                </div>
-              </div>
-            </div>
-            
-          </div>
-      
-          <!-- Coding Skills -->
-          <div class="skills-box right">
-            <h3 class="skills-title">Coding Skills</h3>
-            <div class="skill">
-              <img src="https://res.cloudinary.com/dcnsm4mxv/image/upload/v1738594289/html-5_zuexu0.png" alt="HTML" />
-              <div class="skill-info">
-                <p>HTML</p>
-                <div class="skill-bar">
-                  <div class="skill-progress" style="width: 95%;"></div>
-                </div>
-              </div>
-            </div>
-            <div class="skill">
-              <img src="https://res.cloudinary.com/dcnsm4mxv/image/upload/v1738594290/js_aqevun.png" alt="JavaScript" />
-              <div class="skill-info">
-                <p>JavaScript</p>
-                <div class="skill-bar">
-                  <div class="skill-progress" style="width: 50%;"></div>
-                </div>
-              </div>
-            </div>
-            <div class="skill">
-              <img src="https://res.cloudinary.com/dcnsm4mxv/image/upload/v1738594290/python_ibxrp8.png" alt="React" />
-              <div class="skill-info">
-                <p>python</p>
-                <div class="skill-bar">
-                  <div class="skill-progress" style="width: 70%;"></div>
-                </div>
-              </div>
-            </div>
-            <div class="skill">
-              <img src="https://res.cloudinary.com/dcnsm4mxv/image/upload/v1738594289/java_dvp43r.png" alt="React" />
-              <div class="skill-info">
-                <p>Java</p>
-                <div class="skill-bar">
-                  <div class="skill-progress" style="width: 60%;"></div>
-                </div>
-              </div>
-            </div>
-            <div class="skill">
-              <img src="https://res.cloudinary.com/dcnsm4mxv/image/upload/v1738594288/mysql_fmjlin.png" alt="React" />
-              <div class="skill-info">
-                <p>MySQL</p>
-                <div class="skill-bar">
-                  <div class="skill-progress" style="width: 90%;"></div>
-                </div>
-              </div>
-            </div>
-            <div class="skill">
-              <img src="https://res.cloudinary.com/dcnsm4mxv/image/upload/v1738594285/mangoDB_x3vbfk.png" alt="React" />
-              <div class="skill-info">
-                <p>MangoDB</p>
-                <div class="skill-bar">
-                  <div class="skill-progress" style="width: 80%;"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      
-        
-        
-    </div>
+        </section>
 
 
-<div class="blank"><h1 class="head text-center ">Recent works</h1>
-</div>
-    <div id="works" class="works">
-        <div class="container">
-            <div class="row">
-                <div class="col">
-                  <div id="workingpro">
-                   <div id="list-item-1" class="list-item-1">
-                    <div class="container">
-                                <div class="box">
-                                    <span></span>
-                                    <div class="content">
-                                      <h2>spark</h2>
-                                      <p>a smart parking lot reservtion system made for safe and adavnced parking.</p>
-                                      <a  href="https://github.com/vinothvbt/Spark"><i class="fab fa-github icon"></i>source code</a>
-                                      <a  href="https://vinothvbt.github.io/Spark">view site</a>
-                                    </div>   
-                                </div>
-                            
-                                <div class="box">
-                                    <span></span>
-                                    <div class="content">
-                                      <h2>showaura</h2>
-                                      <p>A social media website for talented indviduals showcase,discover,appriciate others  </p>
-                                      <a href="https://github.com/vinothvbt/showaura"><i class="fab fa-github icon"></i>source code</a>
-                                      <a href="https://vinothvbt.github.io/showaura">view site</a>
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 text-center fade-in">
+            <h2 class="text-3xl font-bold mb-4">Get In Touch</h2>
+            <p class="text-slate-300 max-w-xl mx-auto mb-8">
+                I'm currently seeking new opportunities in Application Security and DevSecOps. If you have a project or role where my skills can add value, I'd love to connect.
+            </p>
+            <div class="flex justify-center items-center space-x-6">
+                <a href="mailto:jeyashreenarayanan1407@gmail.com" class="px-8 py-3 bg-teal-400 text-gray-900 font-semibold rounded-lg shadow-lg hover:bg-teal-300 transform hover:-translate-y-1 transition-all duration-300">Email Me</a>
+                <a href="https://github.com/JSNrepo" target="_blank" rel="noopener noreferrer" class="text-slate-300 hover:text-teal-300 transition-colors duration-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.91 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                </a>
+                <a href="https://linkedin.com/in/jeyashree-narayanan" target="_blank" rel="noopener noreferrer" class="text-slate-300 hover:text-teal-300 transition-colors duration-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                </a>
+            </div>
+        </section>
+    </main>
 
-                                    </div>
-                                  </div>
-                                <div class="box">
-                                    <span></span>
-                                    <div class="content">
-                                      <h2>csv-to-cgpa calculator</h2>
-                                      <p>a advanced cgpa calculator that can calculate cgpa by uploading the result CSV file</p>
-                                      <a href="https://github.com/vinothvbt/gpa"><i class="fab fa-github icon"></i>source code</a>
-                                      <a href="https://vinothvbt.github.io/gpa">view site</a>
-                                    </div>
-                                  </div>
-                            
-                        
-                    </div>
-                   </div>
-                  </div>
-                </div>
-            </div>           
-        </div>
-</div>
-<div class="blank"><h1 class="head text-center ">creations</h1></div>
-      <div class="mydesigns">
-<div class="container-poters" id="list-item-2">
-  <div class="grid">
-    <div class="column">
-      <img loading="lazy"   src="https://res.cloudinary.com/dcnsm4mxv/image/upload/f_auto,q_auto/v1738594334/weeknd_onele4.png" alt="">
-      <img loading="lazy"   src="https://res.cloudinary.com/dcnsm4mxv/image/upload/f_auto,q_auto/v1738594332/new_event_1_fyrjvf.png" alt="">
-      <img loading="lazy"   src="https://res.cloudinary.com/dcnsm4mxv/image/upload/f_auto,q_auto/v1738594332/Red_Black_Modern_Streetwear_Fashion_Promotion_Template_Poster_iomeqx.png" alt="">
-      <img loading="lazy"   src="https://res.cloudinary.com/dcnsm4mxv/image/upload/f_auto,q_auto/v1738594331/Red_And_Black_Action_Movie_Poster_gswrqe.png" alt="">
-  
-    </div>
-    <div class="column">
-      <img loading="lazy"   src="https://res.cloudinary.com/dcnsm4mxv/image/upload/f_auto,q_auto/v1738594331/Untitled_design_rmesbe.png" alt="">
-      <img loading="lazy"   src="https://res.cloudinary.com/dcnsm4mxv/image/upload/f_auto,q_auto/v1738594331/Taste_Night_od1f79.png" alt="">
-      <img loading="lazy"   src="https://res.cloudinary.com/dcnsm4mxv/image/upload/f_auto,q_auto/v1738594328/Red_And_Gold_Modern_Ramadhan_Iftar_Party_Poster_z0hqek.png" alt="">
-      <img loading="lazy"   src="https://res.cloudinary.com/dcnsm4mxv/image/upload/f_auto,q_auto/v1738594328/Purple_Traditional_Pongal_Festival_Greeting_Your_Story_ssps8y.png" alt="">
-      <img loading="lazy"   src="https://res.cloudinary.com/dcnsm4mxv/image/upload/f_auto,q_auto/v1738594327/Red_And_Black_Action_Movie_Poster_1_ti0djm.png" alt="">
-      <img loading="lazy"   src="https://res.cloudinary.com/dcnsm4mxv/image/upload/f_auto,q_auto/v1738594324/louis_jdmyqt.png" alt="">
-      <img loading="lazy"   src="https://res.cloudinary.com/dcnsm4mxv/image/upload/f_auto,q_auto/v1738594324/PARTY_cuj4sk.png" alt="">
-    </div>
-    <div class="column">
-      <img loading="lazy"   src="https://res.cloudinary.com/dcnsm4mxv/image/upload/f_auto,q_auto/v1738594321/nippon_challenge_ohlek7.png" alt="">
-      <img loading="lazy"   src="https://res.cloudinary.com/dcnsm4mxv/image/upload/f_auto,q_auto/v1738594320/new_collection_urban_fashion_social_media_template_Poster_t0deka.png" alt="">
-      <img loading="lazy"   src="https://res.cloudinary.com/dcnsm4mxv/image/upload/f_auto,q_auto/v1738594319/Kite_maker_c4ipwp.png" alt="">
-      <img loading="lazy"   src="https://res.cloudinary.com/dcnsm4mxv/image/upload/f_auto,q_auto/v1738594315/Hot_Red_Night_Party_Club_Poster_ojc4st.png" alt="">
-      <img loading="lazy"   src="https://res.cloudinary.com/dcnsm4mxv/image/upload/f_auto,q_auto/v1738594314/Game_On_c4buod.png" alt="">
-      <img loading="lazy"   src="https://res.cloudinary.com/dcnsm4mxv/image/upload/f_auto,q_auto/v1738594315/Go_vegen_p6ow6u.png" alt="">
-      <img loading="lazy"   src="https://res.cloudinary.com/dcnsm4mxv/image/upload/f_auto,q_auto/v1738594315/fashion_sale_zkfpll.png" alt="">
-    </div>
-    <div class="column">
-      <img loading="lazy"   src="https://res.cloudinary.com/dcnsm4mxv/image/upload/f_auto,q_auto/v1738594313/Eating_competition_sklzkt.png" alt="">
-      <img loading="lazy"   src="https://res.cloudinary.com/dcnsm4mxv/image/upload/f_auto,q_auto/v1738594310/Dj_caps_cwneua.png" alt="">
-      <img loading="lazy"   src="https://res.cloudinary.com/dcnsm4mxv/image/upload/f_auto,q_auto/v1738594299/Brown_Mystery_Movie_Poster_emmhph.png" alt="">
-      <img loading="lazy"   src="https://res.cloudinary.com/dcnsm4mxv/image/upload/f_auto,q_auto/v1738594297/celebration_ta5rqz.png" alt="">
-      <img loading="lazy"   src="https://res.cloudinary.com/dcnsm4mxv/image/upload/f_auto,q_auto/v1738594296/Anime_poster_making_competition_n5alc7.png" alt="">
-      <img loading="lazy"   src="https://res.cloudinary.com/dcnsm4mxv/image/upload/f_auto,q_auto/v1738594295/Black_And_White_Vintage_Music_Festival_Poster_ivpfei.png" alt="">
-      <img loading="lazy"   src="https://res.cloudinary.com/dcnsm4mxv/image/upload/f_auto,q_auto/v1738594293/8_p.m._nuhr8r.png" alt="">
-    </div>
-    <div class="column">
-      <img loading="lazy"   src="https://res.cloudinary.com/dcnsm4mxv/image/upload/f_auto,q_auto/v1738594289/1000030028_47c0c0440e80a012adc97b95a1451f57-9_24_2024_9_38_24_PM_jytzzk.jpg" alt="">
-      <img loading="lazy"   src="https://res.cloudinary.com/dcnsm4mxv/image/upload/f_auto,q_auto/v1738594287/1_cfadzq.png" alt="">
-      <img loading="lazy"   src="https://res.cloudinary.com/dcnsm4mxv/image/upload/f_auto,q_auto/v1738594292/Artist_ya_awuqk1.gif" alt="">
-      <img loading="lazy"   src="https://res.cloudinary.com/dcnsm4mxv/image/upload/f_auto,q_auto/v1738594288/2_dbs083.png" alt="">
-    </div>
-  </div>
-        
-        </div>
-      </div>
-      </div>
-      <div class="blank"><h1 class="head text-center ">Contact me</h1></div>
-    <footer id="contact"class="contact">
-      
-        <div class="forms" >
-        <form class="contact-form xyz" id="mailform">
-          <input type="text" placeholder="Enter your name" name="customer" class="name-input" required>
-          <input type="email" placeholder="Enter your email" class="email-input" required name="email">
-          <textarea placeholder="Your message" class="message-input" rows="4" required name="message"></textarea>
-          <button type="submit" class="submit-btn">Send</button>
-        </form>
-      </div>
-      <div class="contacts xyz">
-        <ul>
-          <li>
-            <a href="https://github.com/vinothvbt"><i class="fab fa-github icon"></i></a>
-          </li>
-          <li>
-            <a href="#"><i class="fab fa-linkedin-in icon"></i></a></li>
-          <li>
-            <a href="https://www.instagram.com/vinoth.dl/"><i class="fab fa-instagram icon"></i></a></li>
-        </ul>
-      </div>
+    <footer class="text-center py-6 border-t border-gray-800">
+        <p class="text-slate-400">&copy; 2025 Jeyashree Narayanan. Designed with a Builder-Breaker mindset.</p>
     </footer>
-    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+
+    <!-- Modals -->
+    <!-- HATS Modal -->
+    <div id="hatsModal" class="fixed inset-0 bg-black bg-opacity-70 z-50 hidden flex items-center justify-center p-4">
+        <div class="glass-effect rounded-lg p-8 max-w-2xl w-full relative transform transition-transform duration-300 scale-95">
+            <button onclick="closeModal('hatsModal')" class="absolute top-4 right-4 text-2xl text-slate-300 hover:text-teal-300">&times;</button>
+            <h3 class="text-3xl font-bold text-teal-300 mb-4">HATS (Hacking Automation Tool Suite)</h3>
+            <div class="text-slate-300 space-y-4">
+                <p><strong class="text-white">The Problem:</strong> In modern, high-velocity development, traditional security testing is a major bottleneck. Manual assessments are slow and inefficient, delaying feedback to developers and increasing remediation costs.</p>
+                <p><strong class="text-white">Our Solution:</strong> HATS is a modular Python framework that unifies 37+ CLI security tools into a single, automated workflow. Engineered for a "shift-left" DevSecOps culture, it provides developers with immediate security feedback via automated pre-commit checks.</p>
+                <div><strong class="text-white">Key Features:</strong>
+                    <ul class="list-disc list-inside mt-2 pl-4">
+                        <li><strong>Modular Design:</strong> Easily extensible to incorporate new tools.</li>
+                        <li><strong>CI/CD Integration:</strong> Designed for seamless integration into pre-commit hooks and CI/CD pipelines.</li>
+                        <li><strong>Model Context Protocol (MCP):</strong> A centralized server that standardizes data parsing for advanced analysis and future AI agent integration.</li>
+                    </ul>
+                </div>
+                <p><strong class="text-white">Quantifiable Impact:</strong> Reduced vulnerability assessment time by <strong>97%</strong>, from over 2 hours to under 3 minutes, enabling a high-velocity feedback loop.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- DTP Modal -->
+    <div id="dtpModal" class="fixed inset-0 bg-black bg-opacity-70 z-50 hidden flex items-center justify-center p-4">
+        <div class="glass-effect rounded-lg p-8 max-w-2xl w-full relative transform transition-transform duration-300 scale-95">
+            <button onclick="closeModal('dtpModal')" class="absolute top-4 right-4 text-2xl text-slate-300 hover:text-teal-300">&times;</button>
+            <h3 class="text-3xl font-bold text-teal-300 mb-4">Decoy Trap Protocol (DTP)</h3>
+            <div class="text-slate-300 space-y-4">
+                <p><strong class="text-white">The Challenge:</strong> The software supply chain is under constant attack. Purely preventative security is not enough; we must assume attackers will eventually bypass defenses. The critical question is how quickly we can detect a breach and render stolen data useless.</p>
+                <p><strong class="text-white">A New Philosophy of Defense:</strong> DTP is an active defense Python SDK built on deception. It wraps data in a cryptographic trap. An attacker who decrypts a DTP-protected secret finds a worthless decoy, and their interaction triggers a silent, high-fidelity alarm.</p>
+                <div><strong class="text-white">Technical Deep Dive:</strong>
+                    <ul class="list-disc list-inside mt-2 pl-4">
+                        <li><strong>Cryptography:</strong> Employs PBKDF2 with 200,000 iterations and AES-256-GCM for authenticated encryption.</li>
+                        <li><strong>Steganography:</strong> The real secret is encoded into invisible zero-width Unicode characters, hidden within a decoy message.</li>
+                    </ul>
+                </div>
+                <p><strong class="text-white">Validation & Results:</strong> Reduced Mean Time to Detect (MTTD) a breach from hours to <strong>under 3 minutes</strong> with a <strong>0% false-positive rate</strong> across 100+ simulations.</p>
+            </div>
+        </div>
+    </div>
 
     <script>
-     (function() {
-    emailjs.init("etAN9J_iAGG9l1oGG"); 
-  })();
+        document.addEventListener('DOMContentLoaded', function () {
+            // Mobile Menu Toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+            
+            // Typewriter Effect
+            const typewriterElement = document.getElementById('typewriter');
+            const phrases = [
+                "Application Security Engineer",
+                "The Builder && The Breaker",
+                "AI/ML & Web Security Specialist"
+            ];
+            let phraseIndex = 0;
+            let charIndex = 0;
+            let isDeleting = false;
 
-  document.getElementById("mailform").addEventListener("submit", function(event) {
-    event.preventDefault();
+            function type() {
+                const currentPhrase = phrases[phraseIndex];
+                if (isDeleting) {
+                    typewriterElement.textContent = currentPhrase.substring(0, charIndex--);
+                } else {
+                    typewriterElement.textContent = currentPhrase.substring(0, charIndex++);
+                }
 
-    const serviceID = "service_w7l2kpr";
-    const templateID = "template_55ake9q"; 
+                let typeSpeed = isDeleting ? 75 : 150;
 
-    emailjs.sendForm(serviceID, templateID, this)
-      .then(() => alert("Message sent successfully!"))
-      .catch((error) => {
-        console.error("Error:", error);
-        alert("Failed to send the message. Please try again.");
-      });
-  });
+                if (!isDeleting && charIndex === currentPhrase.length) {
+                    typeSpeed = 2000;
+                    isDeleting = true;
+                } else if (isDeleting && charIndex === 0) {
+                    isDeleting = false;
+                    phraseIndex = (phraseIndex + 1) % phrases.length;
+                    typeSpeed = 500;
+                }
 
+                setTimeout(type, typeSpeed);
+            }
+            type();
 
-   
-const words = ["  Design. ", "  Code. ", "  Develop. "];
-let i = 0;
-let j = 0;
-let currentWord = "";
-let isDeleting = false;
+            // Intersection Observer for fade-in animations
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        if (entry.target.classList.contains('skill-bar')) {
+                            const progressBar = entry.target.querySelector('.progress-bar-fill');
+                            if(progressBar) progressBar.classList.add('visible');
+                        }
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
 
-function type() {
-  currentWord = words[i];
-  if (isDeleting) {
-    document.getElementById("typewriter").textContent = currentWord.substring(1, j-1);
-    j--;
-    if (j == 0) {
-      isDeleting = false;
-      i++;
-      if (i == words.length) {
-        i = 0;
-      }
-    }
-  } else {
-    document.getElementById("typewriter").textContent = currentWord.substring(1, j+1);
-    j++;
-    if (j == currentWord.length) {
-      isDeleting = true;
-    }
-  }
-  setTimeout(type, 150);
-}
-
-type();
-        const flipContainer = document.getElementById('intro-flip-container');
-        const flipButton = document.getElementById('flip-btn');
-        const flipBackButton = document.getElementById('flip-back-btn');
-
-        flipButton.addEventListener('click', () => {
-            flipContainer.classList.add('active');
+            document.querySelectorAll('.fade-in, .skill-bar').forEach(el => {
+                observer.observe(el);
+            });
         });
 
-        flipBackButton.addEventListener('click', () => {
-            flipContainer.classList.remove('active');
-        });
-
-  const images = document.querySelectorAll('.image');
-  const boxes = document.querySelectorAll('.box');
-  const phones= document.querySelectorAll('.contact');
-  const conactForm =document.querySelectorAll('.xyz');
-  const intros =document.querySelectorAll('.start');
-  const Left =document.querySelectorAll('.left');
-  const Right =document.querySelectorAll('.right');
-
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('scrolled');
+        // Modal Logic
+        function openModal(modalId) {
+            const modal = document.getElementById(modalId);
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+            setTimeout(() => {
+                modal.querySelector('div > div').classList.remove('scale-95');
+            }, 10);
         }
-        else{
-            entry.target.classList.remove('scrolled');
 
+        function closeModal(modalId) {
+            const modal = document.getElementById(modalId);
+            modal.querySelector('div > div').classList.add('scale-95');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+                document.body.style.overflow = '';
+            }, 300);
         }
-      });
-    },
-    { threshold: 0.2 } 
-  );
-  boxes.forEach((box) => observer.observe(box));
-  images.forEach((image) => observer.observe(image));
-  phones.forEach((contact) => observer.observe(contact));
-  conactForm.forEach((xyz) => observer.observe(xyz));
-  intros.forEach((start) => observer.observe(start));
-  Left.forEach((left) => observer.observe(left));
-  Right.forEach((right) => observer.observe(right));
-
-  // Enhanced parallax scrolling effects
-  window.addEventListener('scroll', () => {
-    const scrolled = window.pageYOffset;
-    const parallaxElements = document.querySelectorAll('.intro, .mydesigns');
-    const speed = 0.5;
-    
-    parallaxElements.forEach(element => {
-      const rect = element.getBoundingClientRect();
-      const elementTop = rect.top + scrolled;
-      const elementHeight = rect.height;
-      
-      // Only apply parallax if element is in viewport
-      if (scrolled + window.innerHeight > elementTop && scrolled < elementTop + elementHeight) {
-        const yPos = -(scrolled - elementTop) * speed;
-        element.style.transform = `translateY(${yPos}px)`;
-      }
-    });
-
-    // Parallax effect for skill images
-    const skillImages = document.querySelectorAll('.skill img');
-    skillImages.forEach((img, index) => {
-      const yPos = scrolled * (0.1 + index * 0.02);
-      img.style.transform = `translateY(${yPos}px)`;
-    });
-  });
-
-  // Smooth scrolling for navigation links
-  document.querySelectorAll('.topnav a').forEach(link => {
-    link.addEventListener('click', (e) => {
-      e.preventDefault();
-      const targetId = link.getAttribute('href');
-      const targetElement = document.querySelector(targetId);
-      
-      if (targetElement) {
-        targetElement.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start'
-        });
-      }
-    });
-  });
-
-  // Enhanced microinteraction for navigation items
-  document.querySelectorAll('.topnav li').forEach(item => {
-    item.addEventListener('mouseenter', () => {
-      item.style.transform = 'translateY(-3px)';
-    });
-    
-    item.addEventListener('mouseleave', () => {
-      item.style.transform = 'translateY(0)';
-    });
-  });
-  
+        
+        window.onclick = function(event) {
+            const modals = document.querySelectorAll('.fixed.inset-0');
+            modals.forEach(modal => {
+                if (event.target == modal) {
+                    closeModal(modal.id);
+                }
+            });
+        }
     </script>
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
